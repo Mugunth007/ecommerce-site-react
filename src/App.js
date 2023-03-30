@@ -1,28 +1,26 @@
+import React from 'react';
+import {Routes,Route} from "react-router-dom";
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "./components/Navbar";
+import ProductList from "./components/ProductList";
+import Details from "./components/Details";
+import Cart from "./components/Cart";
+import Default from "./components/Default";
+import Modal from './components/Modal';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <React.Fragment>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" component={<ProductList/>} />
+        <Route path="/details" component={<Details/>} />
+        <Route path="/cart" component={<Cart/>} />
+        <Route component={<Default/>} />
+      </Routes>
+      <Modal />
+    </React.Fragment>
   );
 }
 
