@@ -13,6 +13,7 @@ function App() {
   return (
     <React.Fragment>
       <Navbar />
+    <ProductList/>
       <Routes>
         <Route exact path="/" component={<ProductList/>} />
         <Route path="/details" component={<Details/>} />
